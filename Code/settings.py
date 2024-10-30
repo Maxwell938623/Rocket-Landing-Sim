@@ -16,7 +16,7 @@ GREEN = (0, 255, 0)
 ORANGE = (255, 165, 0)
 YELLOW = (255, 255, 0)
 
-# Define constants (tuned PID parameters)
+# Define constants
 Kp_pos = 0
 Kd_pos = 0
 Kp_height = 2
