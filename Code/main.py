@@ -23,10 +23,8 @@ def main():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 grid = handle_mouse_click(event, grid)
 
-        # Drawing the grid and buttons
         draw_main_screen(grid)
-
-        # Update the display
+        
         pygame.display.flip()
 
 if __name__ == "__main__":
