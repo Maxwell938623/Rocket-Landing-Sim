@@ -13,7 +13,7 @@ def draw_button(x, y, width, height, text):
     return button_rect
 
 def handle_mouse_click(event, grid):
-    if event.button == 1:  # Left mouse button
+    if event.button == 1:
         mouse_x, mouse_y = event.pos
         if clear_button_rect.collidepoint(event.pos):
             grid = clear_rocket_shape()
@@ -24,7 +24,6 @@ def handle_mouse_click(event, grid):
             col = mouse_x // CELL_SIZE - 5
             row = mouse_y // CELL_SIZE - 5
             if 0 <= col < COLUMNS and 0 <= row < ROWS:
-                # Toggle cell state if not the middle blue block
                 if grid[row][col] == 1:
                     original_value = grid[row][col]
                     grid[row][col] = 0
@@ -48,7 +47,7 @@ def draw_main_screen(grid):
                 pygame.draw.rect(SCREEN, RED, rect)
             elif grid[row][col] == 2:
                 pygame.draw.rect(SCREEN, BLUE, rect)
-            pygame.draw.rect(SCREEN, BLACK, rect, 1)  # Draw cell border
+            pygame.draw.rect(SCREEN, BLACK, rect, 1) 
 
     global clear_button_rect, simulate_button_rect
     clear_button_rect = draw_button(10, HEIGHT - 50, 170, 40, "Clear Rocket")
