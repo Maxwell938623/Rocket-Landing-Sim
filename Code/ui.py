@@ -40,7 +40,7 @@ def handle_mouse_click(event, grid):
 
 def draw_main_screen(grid):
     SCREEN.fill(WHITE)
-    # Draw the grid
+
     for row in range(ROWS):
         for col in range(COLUMNS):
             rect = pygame.Rect((col + 5) * CELL_SIZE, (row + 5) * CELL_SIZE, CELL_SIZE, CELL_SIZE)
@@ -50,12 +50,10 @@ def draw_main_screen(grid):
                 pygame.draw.rect(SCREEN, BLUE, rect)
             pygame.draw.rect(SCREEN, BLACK, rect, 1)  # Draw cell border
 
-    # Draw buttons
     global clear_button_rect, simulate_button_rect
     clear_button_rect = draw_button(10, HEIGHT - 50, 170, 40, "Clear Rocket")
     simulate_button_rect = draw_button(220, HEIGHT - 50, 125, 40, "Simulate")
 
-    # Display rocket dimensions
     _, _, rocket_width, rocket_height = calculate_rocket_dimensions(grid)
     rocket_width //= CELL_SIZE
     rocket_height //= CELL_SIZE
